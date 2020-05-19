@@ -19,14 +19,16 @@ public class MyOwn_List {
 //        System.out.println(list);
 
           MyList list = new MyList();
-          list.plius(1);
-          list.plius(2);
-          list.plius("Labas");
-          list.plius(4);
-          list.plius(5);
-          list.plius(6);
+          list.plius("L");
+          list.plius("a");
+          list.plius("b");
+          list.plius("a");
+          list.plius("s");
+          list.remove(3);
+          System.out.println("------");
+          System.out.println(list);
           
-          System.out.println(list.get(6));
+//          System.out.println(list.get(1));
     }
     
 }

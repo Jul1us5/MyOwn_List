@@ -25,12 +25,28 @@ public class MyList {
 //    }
 
     public Object get(int index) {
-        if (index >= size()) {
-            return error();
-        } else {
-            return this.list[index];
-        }
+//        if (index >= size()) {
+//            return error();
+//        } else {
+//            return this.list[index];
+//        }
+        return this.list[index];
 
+    }
+
+    public void remove(int index) {
+        for (int i = index; i < size() - 1; i++) {
+            list[index] = list[i + 1];
+            list[i + 1] = "";
+        }
+    }
+
+    public void insert(int index, Object o) {
+        //
+    }
+
+    public void set(int index, Object o) {
+        this.list[index] = o;
     }
 
     public String error() {
