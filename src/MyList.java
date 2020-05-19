@@ -11,7 +11,7 @@ public class MyList {
         list = new Object[0];
     }
 
-    public void plius(Object o) {
+    public void add(Object o) {
         Object[] newList = new Object[this.list.length + 1];
         for (int i = 0; i < list.length; i++) {
             newList[i] = this.list[i];
@@ -20,9 +20,6 @@ public class MyList {
         this.list = newList;
         this.list[this.list.length - 1] = o;
     }
-//    public void remove(Object o) {
-//        
-//    }
 
     public Object get(int index) {
         if (index >= size()) {
@@ -30,7 +27,44 @@ public class MyList {
         } else {
             return this.list[index];
         }
+    }
 
+    public void remove(int index) {
+
+        Object[] next = new Object[this.list.length - 1];
+        for (int i = index; i < list.length - 1; i++) {
+            list[i] = list[i + 1];
+        }
+        for (int x = 0; x < list.length - 1; x++) {
+            next[x] = this.list[x];
+        }
+        this.list = next;
+    }
+    
+
+    public void insert(int index, Object o) {
+        
+        Object[] next = new Object[this.list.length];
+        for (int i = 0; i < next.length; i++) {
+            
+            System.out.println(list[2+1]);
+            
+//           list[index] = o;
+//           list[index] = o;
+//           list[index + 1] = list[index];
+//           list[index] = o;
+//                      list[index-1] = o;
+//           list[index + 1] = list[i+1];
+//           list[index] = o;
+
+            
+        }
+
+
+    }
+
+    public void set(int index, Object o) {
+        this.list[index] = o;
     }
 
     public String error() {
