@@ -40,27 +40,22 @@ public class MyList {
         }
         this.list = next;
     }
-    
 
     public void insert(int index, Object o) {
-        
-        Object[] next = new Object[this.list.length];
-        for (int i = 0; i < next.length; i++) {
-            
-            System.out.println(list[2+1]);
-            
-//           list[index] = o;
-//           list[index] = o;
-//           list[index + 1] = list[index];
-//           list[index] = o;
-//                      list[index-1] = o;
-//           list[index + 1] = list[i+1];
-//           list[index] = o;
 
-            
+         Object[] newList = new Object[this.list.length + 1];
+        for (int i = 0; i < list.length; i++) {
+            newList[i] = this.list[i];
+
         }
-
-
+        this.list = newList;
+        this.list[this.list.length - 1] = o;
+        for (int i = 5; i > index; i--) {
+            
+           this.list[i] = this.list[i-1]; 
+           this.list[i-1] = o;
+        }
+        
     }
 
     public void set(int index, Object o) {
@@ -76,7 +71,7 @@ public class MyList {
     }
 
     public String toString() {
-        String s = "MyList{ ";
+        String s = "MyList { ";
         for (Object o : list) {
             s += ((o == null) ? "null" : o.toString()) + " ";
         }
