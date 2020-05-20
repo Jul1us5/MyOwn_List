@@ -15,7 +15,7 @@ public class MyOwn_List {
           list.add("b");
           list.add("a");
           list.add("s");
-          list.insert(2, "!");
+          list.insert(5, "!");
           System.out.println(list);
     }
     
