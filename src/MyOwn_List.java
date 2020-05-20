@@ -16,6 +16,13 @@ public class MyOwn_List {
           list.add("a");
           list.add("s");
           list.insert(5, "!");
+          
+          MyList_Interface linked = new MyList();
+          
+          
+          linked.add("Julius");
+          linked.remove(0);
+          System.out.println(linked);
           System.out.println(list);
     }
     

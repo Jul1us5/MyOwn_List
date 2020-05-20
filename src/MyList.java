@@ -1,9 +1,10 @@
 
+
 /**
  *
  * @author Julius
  */
-public class MyList {
+public class MyList implements MyList_Interface {
 
     private Object[] list;
 
