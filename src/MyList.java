@@ -1,9 +1,10 @@
 
+
 /**
  *
  * @author Julius
  */
-public class MyList {
+public class MyList implements MyList_Interface {
 
     private Object[] list;
 
@@ -50,7 +51,7 @@ public class MyList {
         }
         this.list = newList;
         this.list[this.list.length - 1] = o;
-        for (int i = 5; i > index; i--) {
+        for (int i = list.length - 1; i > index; i--) {
             
            this.list[i] = this.list[i-1]; 
            this.list[i-1] = o;
