@@ -23,8 +23,8 @@ public class MyList implements MyList_Interface {
     }
 
     public Object get(int index) {
-        if (index >= size()) {
-            return error();
+        if (index > size()) {
+            return error(101);
         } else {
             return this.list[index];
         }
@@ -63,8 +63,11 @@ public class MyList implements MyList_Interface {
         this.list[index] = o;
     }
 
-    public String error() {
-        return "Klaida! Masyva sudaro tik " + size() + " elementu!";
+    public String error(int problem) {
+        if(problem == 101) {
+            return "Problem with LIST length / get() method cant get..";
+        }
+        return "You have problem..";
     }
 
     public int size() {

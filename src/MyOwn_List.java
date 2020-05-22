@@ -29,8 +29,7 @@ public class MyOwn_List {
           list.add("i");
  
           
-          System.out.println(list.get(2));
-          System.out.println(list.size());
+          System.out.println(list.get(9));
           System.out.println(list);
     }
    
