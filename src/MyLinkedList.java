@@ -26,8 +26,16 @@ public class MyLinkedList implements MyList_Interface {
     }
             
     public Object get(int index) {
-        
-        return null;
+        Item last = head;
+        int counter = 0;
+        while(last != null) {
+            if(counter == index) {
+                return last.value;
+            }
+            last = last.next;
+            counter++;
+        }
+        return error(101);
     }
 
     public void remove(int index) {
@@ -47,8 +55,11 @@ public class MyLinkedList implements MyList_Interface {
     }
    
 
-    public String error() {
-        return null;
+    public String error(int problem) {
+        if(problem == 101) {
+            return "Problem with LIST length / get() method cant get..";
+        }
+        return "You have problem..";
     }
     
     public int size() {
