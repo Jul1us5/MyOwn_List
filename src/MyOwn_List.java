@@ -9,29 +9,24 @@ import java.util.List;
 public class MyOwn_List {
 
     public static void main(String[] args) {
-             
+
 //         MyList list = new MyList();
 //          list.add("L");
 //          list.add("a");
 //          list.add("b");
 //          list.add("a");
 //          list.add("s");
-//          list.insert(5, "!");
-          
-          MyList_Interface list = new MyLinkedList();
-          
-          list.add("P");
-          list.add("a");
-          list.add("s");
-          list.add("a");
-          list.add("u");
-          list.add("l");
-          list.add("i");
- 
-          
-          System.out.println(list.get(9));
-          System.out.println(list);
+        MyList_Interface list = new MyLinkedList();
+
+        list.add("P");
+        list.add("a");
+        list.add("s");
+        list.add("a");
+        list.add("u");
+        list.add("l");
+        list.add("i");
+
+        System.out.println(list);
     }
-   
-    
+
 }
