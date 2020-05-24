@@ -26,6 +26,7 @@ public class MyOwn_List {
         list.add("u");
         list.add("l");
         list.add("i");
+        list.insert(0, "O");
 
         System.out.println(list);
     }

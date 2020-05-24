@@ -61,14 +61,47 @@ public class MyLinkedList implements MyList_Interface {
     }
 
     public void insert(int index, Object o) {
-        //
+        
+        if(index > size() || index < 0) {
+            System.out.println("!!!!");
+        } else {
+        
+        if (head != null) {
+            Item last = head;
+            Item prev = null;
+            int counter = 0;
+            while (last != null) {
+                if (counter == index) {
+                    if (prev == null) {
+                        head = new Item();
+                        head.next = last;
+                        head.value = o;
+                    } else {
+                        prev.next = new Item();
+                        prev.next.value = o;
+                        prev.next.next = last;
+                    }
+                    break;
+                }
+                prev = last;
+                last = last.next;
+                counter++;
+            }
+            if (index == size()) {
+                this.add(o);
+            }
+        }
+        else if (index != 0) {
+            this.add(o);
+        } 
+        }
     }
 
     public void set(int index, Object o) {
         Item last = head;
         int counter = 0;
         while (last != null) {
-            if(counter == index) {
+            if (counter == index) {
                 last.value = o;
                 break;
             }
