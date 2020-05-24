@@ -24,12 +24,12 @@ public class MyLinkedList implements MyList_Interface {
             last.next.value = o;
         }
     }
-            
+
     public Object get(int index) {
         Item last = head;
         int counter = 0;
-        while(last != null) {
-            if(counter == index) {
+        while (last != null) {
+            if (counter == index) {
                 return last.value;
             }
             last = last.next;
@@ -39,29 +39,90 @@ public class MyLinkedList implements MyList_Interface {
     }
 
     public void remove(int index) {
-        if (head == null) {
-            System.out.println("This array is empty..");
-        } else {
 
+        if (head != null) {
+            Item last = head;
+            Item prev = null;
+            int counter = 0;
+            while (head != null) {
+                if (counter == index) {
+                    if (prev == null) {
+                        head = last.next;
+                    } else {
+                        prev.next = last.next;
+                    }
+                    break;
+                }
+                prev = last;
+                last = last.next;
+                counter++;
+            }
         }
     }
 
     public void insert(int index, Object o) {
-        //
+        
+        if(index > size() || index < 0) {
+            System.out.println("!!!!");
+        } else {
+        
+        if (head != null) {
+            Item last = head;
+            Item prev = null;
+            int counter = 0;
+            while (last != null) {
+                if (counter == index) {
+                    if (prev == null) {
+                        head = new Item();
+                        head.next = last;
+                        head.value = o;
+                    } else {
+                        prev.next = new Item();
+                        prev.next.value = o;
+                        prev.next.next = last;
+                    }
+                    break;
+                }
+                prev = last;
+                last = last.next;
+                counter++;
+            }
+            if (index == size()) {
+                this.add(o);
+            }
+        }
+        else if (index != 0) {
+            this.add(o);
+        } 
+        }
     }
 
     public void set(int index, Object o) {
-        //
+        Item last = head;
+        int counter = 0;
+        while (last != null) {
+            if (counter == index) {
+                last.value = o;
+                break;
+            }
+            last = last.next;
+            counter++;
+        }
     }
-   
 
     public String error(int problem) {
-        if(problem == 101) {
-            return "Problem with LIST length / get() method cant get..";
+        if (problem == 100) {
+            return "Problem.. Try again!";
         }
-        return "You have problem..";
+        if (problem == 101) {
+            return "You cant get existing Object";
+        }
+        if (problem == 102) {
+            return "You cant remove existing Object";
+        }
+        return "Problem.. Try again!";
     }
-    
+
     public int size() {
         if (head == null) {
             return 0;
