@@ -65,7 +65,16 @@ public class MyLinkedList implements MyList_Interface {
     }
 
     public void set(int index, Object o) {
-        //
+        Item last = head;
+        int counter = 0;
+        while (last != null) {
+            if(counter == index) {
+                last.value = o;
+                break;
+            }
+            last = last.next;
+            counter++;
+        }
     }
 
     public String error(int problem) {

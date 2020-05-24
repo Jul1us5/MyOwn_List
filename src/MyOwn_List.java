@@ -16,6 +16,7 @@ public class MyOwn_List {
 //          list.add("b");
 //          list.add("a");
 //          list.add("s");
+
         MyList_Interface list = new MyLinkedList();
 
         list.add("P");

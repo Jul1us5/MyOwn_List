@@ -1,4 +1,5 @@
 
+
 /**
  *
  * @author Julius
@@ -43,7 +44,7 @@ public class MyList implements MyList_Interface {
 
     public void insert(int index, Object o) {
 
-        Object[] newList = new Object[this.list.length + 1];
+         Object[] newList = new Object[this.list.length + 1];
         for (int i = 0; i < list.length; i++) {
             newList[i] = this.list[i];
 
@@ -51,11 +52,11 @@ public class MyList implements MyList_Interface {
         this.list = newList;
         this.list[this.list.length - 1] = o;
         for (int i = list.length - 1; i > index; i--) {
-
-            this.list[i] = this.list[i - 1];
-            this.list[i - 1] = o;
+            
+           this.list[i] = this.list[i-1]; 
+           this.list[i-1] = o;
         }
-
+        
     }
 
     public void set(int index, Object o) {

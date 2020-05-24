@@ -10,5 +10,7 @@ public interface MyList_Interface {
     public void remove(int index);
     public void insert(int index, Object o);
     public String error(int problem);
-    public int size();    
+    public int size(); 
+    public void set(int index, Object o);
+
 }
