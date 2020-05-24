@@ -23,11 +23,10 @@ public class MyList implements MyList_Interface {
     }
 
     public Object get(int index) {
-        if (index >= size()) {
-            return error(101);
-        } else {
-            return this.list[index];
-        }
+ 
+            return this.list;
+        
+        
     }
 
     public void remove(int index) {
@@ -64,7 +63,10 @@ public class MyList implements MyList_Interface {
     }
 
     public String error(int problem) {
-        return "Klaida! Masyva sudaro tik " + size() + " elementu!";
+        if(problem == 101) {
+            return "..";
+        }
+        return ",,";
     }
 
     public int size() {
