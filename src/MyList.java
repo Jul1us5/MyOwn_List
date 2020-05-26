@@ -23,10 +23,11 @@ public class MyList implements MyList_Interface {
     }
 
     public Object get(int index) {
- 
-            return this.list;
         
-        
+        if(index < 0 || index >= size()) {
+            return error(101);
+        } 
+            return this.list[index]; 
     }
 
     public void remove(int index) {
@@ -63,10 +64,16 @@ public class MyList implements MyList_Interface {
     }
 
     public String error(int problem) {
-        if(problem == 101) {
-            return "..";
+        if (problem == 100) {
+            return "Problem.. Try again!";
         }
-        return ",,";
+        if (problem == 101) {
+            return "You can't get non-existent LIST position..";
+        }
+        if (problem == 102) {
+            return "You can't remove non-existent LIST position..";
+        }
+        return "Problem.. Try again!";
     }
 
     public int size() {
