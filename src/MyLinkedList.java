@@ -23,11 +23,13 @@ public class MyLinkedList implements MyList_Interface {
             last.next = new Item();
             last.next.value = o;
         }
+        
     }
 
     public Object get(int index) {
         Item last = head;
         int counter = 0;
+        
         while (last != null) {
             if (counter == index) {
                 return last.value;
@@ -58,13 +60,14 @@ public class MyLinkedList implements MyList_Interface {
                 counter++;
             }
         }
+        
     }
 
     public void insert(int index, Object o) {
         
         if(index > size() || index < 0) {
-            System.out.println("!!!!");
-        } else {
+            System.out.println("Problem.. Try again!");
+        }
         
         if (head != null) {
             Item last = head;
@@ -94,7 +97,7 @@ public class MyLinkedList implements MyList_Interface {
         else if (index != 0) {
             this.add(o);
         } 
-        }
+//        }
     }
 
     public void set(int index, Object o) {
@@ -115,10 +118,10 @@ public class MyLinkedList implements MyList_Interface {
             return "Problem.. Try again!";
         }
         if (problem == 101) {
-            return "You cant get existing Object";
+            return "You can't get non-existent LIST position..";
         }
         if (problem == 102) {
-            return "You cant remove existing Object";
+            return "You can't remove non-existent LIST position..";
         }
         return "Problem.. Try again!";
     }
